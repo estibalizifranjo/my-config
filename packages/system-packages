@@ -1,0 +1,11 @@
+xorg-server
+xf86-video-intel
+xf86-input-libinput
+xorg-xrandr
+xorg-xinit
+i3-wm
+i3status
+gnome
+networkmanager
+accountsservice
+openssh
