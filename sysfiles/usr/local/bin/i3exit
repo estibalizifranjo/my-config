@@ -7,12 +7,13 @@ lock() {
     convert ${IMAGE_FILE} -scale 5% -scale 2000% ${IMAGE_FILE}
     i3lock -c 000000 -i ${IMAGE_FILE}
     rm ${IMAGE_FILE}
-    sleep 60; pgrep i3lock && xset dpms force off
 }
 
 case "$1" in
     lock)
         lock
+        sleep 15
+        pgrep i3lock && xset dpms force off
         ;;
     logout)
         i3-msg exit
