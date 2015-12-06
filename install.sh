@@ -10,18 +10,45 @@ if [ "$(which sudo)" == "" ]; then
     exit 2
 fi
 
-echo "Copying the following system configuration files:"
 find sysfiles -type f -exec echo \ · {} \;
-sudo scripts/replicant.sh sysfiles
+echo -n "Want to update the above system configuration files? (yes/no) "
+read RESULT
+if [[ ${RESULT} == "yes" ]]; then
+  sudo scripts/replicant.sh sysfiles
+fi
 
-echo "Going to install $(grep -v "^#" packages/system-packages | grep . | wc -l) system packages: "
-scripts/install.sh packages/system-packages
+echo -n "Want to install $(grep -v "^#" packages/system-packages | grep . | wc -l) system packages? (yes/no) "
+read RESULT
+if [[ ${RESULT} == "yes" ]]; then
+  scripts/install.sh packages/system-packages
+fi
 
-echo "Going to install $(grep -v "^#" packages/user-packages | grep . | wc -l) user packages: "
-scripts/install.sh packages/user-packages
+echo -n "Want to install $(grep -v "^#" packages/user-packages | grep . | wc -l) user packages? (yes/no) "
+read RESULT
+if [[ ${RESULT} == "yes" ]]; then
+  scripts/install.sh packages/user-packages
+fi
 
-echo "Configuring the system: "
-sudo scripts/configure.sh
+echo -n "Want to update your system configuration? (yes/no) "
+read RESULT
+if [[ ${RESULT} == "yes" ]]; then
+  sudo scripts/configure.sh
+fi
 
-echo "Configuring the user: "
-scripts/user-configure.sh
+echo -n "Want to update your user configuration? (yes/no) "
+read RESULT
+if [[ ${RESULT} == "yes" ]]; then
+  scripts/user-configure.sh
+fi
+
+echo "Finally, stow all configurations"
+cd dotfiles
+for FILE in *; do
+  echo -n "Stow ${FILE}? (yes/no) "
+  read RESULT
+  if [[ ${RESULT} == "yes" ]]; then
+    stow -t ~ ${FILE}
+  fi
+done
+
+echo "All done"
