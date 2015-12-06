@@ -1,7 +1,7 @@
 #!/bin/sh
 
-PACMAN=$(whereis pacman)
-YAOURT=$(whereis yaourt)
+PACMAN=$(type -p pacman)
+YAOURT=$(type -p yaourt)
 
 if [ ! -f ${PACMAN} ]; then
   echo "Wrong packet manager, sorry."
