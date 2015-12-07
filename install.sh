@@ -17,17 +17,13 @@ if [[ ${RESULT} == "yes" ]]; then
   sudo scripts/replicant.sh sysfiles
 fi
 
-echo -n "Want to install $(grep -v "^#" packages/system-packages | grep . | wc -l) system packages? (yes/no) "
-read RESULT
-if [[ ${RESULT} == "yes" ]]; then
-  scripts/install.sh packages/system-packages
-fi
-
-echo -n "Want to install $(grep -v "^#" packages/user-packages | grep . | wc -l) user packages? (yes/no) "
-read RESULT
-if [[ ${RESULT} == "yes" ]]; then
-  scripts/install.sh packages/user-packages
-fi
+for FILE in packages/*; do
+  echo -n "Want to install $(grep -v "^#" ${FILE} | grep . | wc -l) packages from ${FILE} file? (yes/no) "
+  read RESULT
+  if [[ ${RESULT} == "yes" ]]; then
+    scripts/install.sh ${FILE}
+  fi
+done
 
 echo -n "Want to update your system configuration? (yes/no) "
 read RESULT
