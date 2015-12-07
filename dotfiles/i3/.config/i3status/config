@@ -6,14 +6,14 @@ general {
 
 #order += "ipv6"
 order += "load"
-order += "wireless wlp2s0"
-order += "ethernet enp3s0"
+order += "wireless wls1"
+order += "ethernet ens5"
 order += "disk /"
 order += "disk /home"
 order += "cpu_temperature 0"
-order += "cpu_temperature 1"
-order += "cpu_temperature 2"
-#order += "battery 0"
+#order += "cpu_temperature 1"
+#order += "cpu_temperature 2"
+order += "battery 0"
 order += "tztime local"
 #order += "tztime travel"
 #order += "volume master"
@@ -22,19 +22,19 @@ load {
 	format = "%1min"
 }
 
-wireless wlp2s0 {
+wireless wls1 {
 	format_up = "W: %essid (%quality) [%ip]"
 	format_down = "W: down"
 }
 
-ethernet enp3s0 {
+ethernet ens5 {
 	# if you use %speed, i3status requires the cap_net_admin capability
 	format_up = "E: %ip (%speed)"
 	format_down = "E: down"
 }
 
 cpu_temperature 0 {
-	format = "0: %degrees °C"
+	format = "ACPI: %degrees °C"
 	path = "/sys/class/thermal/thermal_zone0/temp"
 	max_threshold = 50
 }
