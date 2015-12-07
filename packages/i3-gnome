@@ -3,6 +3,10 @@ gnome
 gnome-extra
 firefox
 vlc
+networkmanager
+network-manager-applet
+pavucontrol
+aur/pasystray-git
 aur/playerctl
 
 ### Coding
