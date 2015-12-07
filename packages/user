@@ -1,20 +1,7 @@
 ### Desktop experience
-gnome-extra
-firefox
 chromium
-vlc
-rofi
-network-manager-applet
-pavucontrol
-dunst
-feh
-i3lock
-xautolock
-scrot
 aur/dropbox
-aur/playerctl
 aur/spotify
-aur/pasystray-git
 
 ### Graphics
 gimp
@@ -23,12 +10,8 @@ inkscape
 ### Net security
 wireshark-gtk
 nmap
-openbsd-netcat
 
 ### Coding
-meld
-git
-vim
 qtcreator
 cmake
 ninja
@@ -37,10 +20,6 @@ gdb
 aur/android-studio
 
 ### System utilities
-stow
-tmux
-htop
-lsof
 efibootmgr
 aur/package-query
 aur/yaourt
