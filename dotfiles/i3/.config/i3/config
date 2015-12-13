@@ -199,6 +199,7 @@ for_window [class="Steam" instance="Steam" title=".* - Chat"] move container to 
 for_window [class="QtCreator"] move container to workspace IDE; workspace IDE
 
 ### Daemons
+exec --no-startup-id ~/.fehbg
 exec --no-startup-id dunst
 exec --no-startup-id nm-applet
 exec --no-startup-id pasystray
