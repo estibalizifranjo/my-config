@@ -204,4 +204,4 @@ exec --no-startup-id dunst
 exec --no-startup-id nm-applet
 exec --no-startup-id pasystray
 exec --no-startup-id xautolock -time 10 -locker 'i3exit lock'
-exec --no-startup-id rofi -key-run Mod4+space
+exec --no-startup-id rofi -key-run SuperR+space
