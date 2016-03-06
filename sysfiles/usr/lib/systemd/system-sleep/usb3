@@ -1,0 +1,13 @@
+#!/bin/sh
+
+BUS=0000:07:00.0
+
+case $1 in
+  "pre")
+    echo -n $BUS | tee /sys/bus/pci/drivers/xhci_hcd/unbind
+    ;;
+  "post")
+    echo -n $BUS | tee /sys/bus/pci/drivers/xhci_hcd/bind
+    ;;
+esac
+
