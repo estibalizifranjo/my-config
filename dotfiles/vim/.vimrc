@@ -2,13 +2,6 @@
 " must be first, because it changes other options as a side effect
 set nocompatible
 
-" paste without auto indentation
-set paste
-
-" Indent automatically depending on filetype
-filetype indent on
-set autoindent tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
-
 " stop unnecessary rendering
 set lazyredraw
 
@@ -30,6 +23,18 @@ set lbr
 " Change colorscheme to solarized
 set background=dark
 colorscheme solarized
+
+""""" Indent
+" Enable file type detection.
+filetype indent on
+set expandtab shiftwidth=2 softtabstop=2
+
+" Special indent for python
+autocmd FileType python setlocal shiftwidth=4 tabstop=4
+
+""" Shift-tab for 'de-tab'
+nnoremap <S-Tab> <<
+inoremap <S-Tab> <C-d>
 
 " Automatically remove trailing spaces
 autocmd BufWritePre * :%s/\s\+$//e
