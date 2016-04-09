@@ -1,0 +1,31 @@
+### Coding
+# C/C++ Compilers
+gcc
+clang
+
+# C/C++ IDE
+qtcreator
+
+# C/C++ Debugging
+gdb
+valgrind
+strace
+
+# Profiling
+perf
+
+# Build system
+cmake
+ninja
+
+# GIT
+git
+
+# Diff graphical utility
+meld
+
+# General purpose editor
+vim
+
+# Python
+python3

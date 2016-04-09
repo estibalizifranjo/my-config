@@ -1,15 +1,50 @@
+### X server
 xorg-server
+
+# Video drivers (only one needed)
 xf86-video-intel
+xf86-video-amdgpu
+xf86-video-ati
+xf86-video-nouveau
+
+# Input driver
 xf86-input-libinput
+
+# Screen management utilities
 xorg-xrandr
+
+### Login manager
 lightdm
 lightdm-gtk-greeter
 accountsservice
+
+### Window manager
 i3-wm
 i3status
+
+### Desktop utilities
+# Lock screen
 i3lock
 xautolock
 scrot
+
+# Background
 feh
+
+# Notifications
 dunst
+
+# Launcher
 rofi
+
+# Network management
+networkmanager
+network-manager-applet
+
+# Sound management
+pavucontrol
+aur/pasystray-git
+
+# Mediakeys utilities
+aur/playerctl
+
