@@ -23,6 +23,9 @@ i3-wm
 i3status
 
 ### Desktop utilities
+# File manager
+nautilus
+
 # Lock screen
 i3lock
 xautolock
