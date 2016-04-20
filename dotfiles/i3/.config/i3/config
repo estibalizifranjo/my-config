@@ -177,6 +177,9 @@ bindsym XF86AudioNext        exec playerctl next
 bindsym XF86AudioPrev        exec playerctl previous
 bindsym XF86AudioStop        exec playerctl stop
 bindsym XF86ScreenSaver      exec i3exit lock
+# Remember to disable acpi_video0 backlight, as intel_backlight is softer
+bindsym $mod+F5              exec xbacklight -5%
+bindsym $mod+F6              exec xbacklight +5%
 
 ### Decorations
 # class                  border    backgr.    text    indicator (*)
