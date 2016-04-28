@@ -1,0 +1,17 @@
+[core]
+	editor = vim
+[push]
+	default = simple
+[merge]
+	tool = meld
+[credential]
+	helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
+[diff]
+	tool = meld
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	unstage = reset HEAD --
+	last = log -1 HEAD
