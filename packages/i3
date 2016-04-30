@@ -44,6 +44,10 @@ rofi
 networkmanager
 network-manager-applet
 
+# Keyring management
+gnome-keyring
+libgnome-keyring
+
 # Sound management
 pavucontrol
 aur/pasystray-git
