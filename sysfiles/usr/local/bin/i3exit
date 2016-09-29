@@ -1,35 +1,39 @@
 #!/bin/sh
 
-IMAGE_FILE=~/.screen_locked.png
+IMAGE_FILE=/dev/shm/.${USER}-screenlock
 
 lock() {
-    scrot ${IMAGE_FILE}
-    convert ${IMAGE_FILE} -scale 5% -scale 2000% ${IMAGE_FILE}
-    i3lock -c 000000 -i ${IMAGE_FILE}
-    rm ${IMAGE_FILE}
+    sleep 0.05 # Delay added to remove possible lock widgets
+    scrot ${IMAGE_FILE}.bmp
+    convert -scale 5% -scale 2000% ${IMAGE_FILE}.bmp ${IMAGE_FILE}.png
+    rm ${IMAGE_FILE}.bmp
+    xautolock -disable
+    # Blocking command
+    i3lock -c 000000 -i ${IMAGE_FILE}.png -n -e -d
+    rm ${IMAGE_FILE}.png
+    xautolock -enable
 }
 
 case "$1" in
+    start)
+        ;;
     lock)
         lock
-        sleep 15
-        pgrep i3lock && xset dpms force off
         ;;
     logout)
         # i3-msg exit
         gnome-session-quit --logout --no-prompt
         ;;
     switch)
-        lock
+        lock &
 	dm-tool switch-to-greeter # lightdm
         ;;
     suspend)
-        lock
         systemctl suspend
+        lock
         ;;
     hibernate)
-	lock
-        systemctl hibernate
+	lock && systemctl hibernate
         ;;
     reboot)
         gnome-session-quit --reboot --no-prompt
