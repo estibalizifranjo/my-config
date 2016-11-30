@@ -22,6 +22,9 @@ accountsservice
 i3-wm
 i3status
 
+### Session manager
+aur/gnome-i3
+
 ### Desktop utilities
 # File manager
 nautilus

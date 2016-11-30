@@ -16,7 +16,8 @@ case "$1" in
         pgrep i3lock && xset dpms force off
         ;;
     logout)
-        i3-msg exit
+        # i3-msg exit
+        gnome-session-quit --logout
         ;;
     switch)
         lock
@@ -31,10 +32,12 @@ case "$1" in
         systemctl hibernate
         ;;
     reboot)
-        systemctl reboot
+        gnome-session-quit --reboot
+        # systemctl reboot
         ;;
     shutdown)
-        systemctl poweroff
+        gnome-session-quit --power-off
+        # systemctl poweroff
         ;;
     *)
         echo "Usage: $0 {lock|logout|switch|suspend|hibernate|reboot|shutdown}"
