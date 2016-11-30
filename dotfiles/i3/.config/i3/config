@@ -200,7 +200,7 @@ for_window [class="QtCreator"] move container to workspace IDE; workspace IDE
 
 ### Daemons
 exec --no-startup-id ~/.fehbg
-exec --no-startup-id dunst
+exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
 exec --no-startup-id nm-applet
 exec --no-startup-id pasystray
 exec --no-startup-id xautolock -time 10 -locker 'i3exit lock'
