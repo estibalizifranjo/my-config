@@ -202,6 +202,6 @@ for_window [class="QtCreator"] move container to workspace IDE; workspace IDE
 exec --no-startup-id ~/.fehbg
 exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
 exec --no-startup-id nm-applet
-exec --no-startup-id pasystray
+exec --no-startup-id volumeicon
 exec --no-startup-id xautolock -time 10 -locker 'i3exit lock'
 exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-settings-daemon

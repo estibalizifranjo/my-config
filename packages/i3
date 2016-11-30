@@ -50,7 +50,7 @@ libgnome-keyring
 
 # Sound management
 pavucontrol
-aur/pasystray-git
+volumeicon
 
 # Mediakeys utilities
 aur/playerctl
