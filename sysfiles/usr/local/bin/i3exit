@@ -17,7 +17,7 @@ case "$1" in
         ;;
     logout)
         # i3-msg exit
-        gnome-session-quit --logout
+        gnome-session-quit --logout --no-prompt
         ;;
     switch)
         lock
@@ -32,11 +32,11 @@ case "$1" in
         systemctl hibernate
         ;;
     reboot)
-        gnome-session-quit --reboot
+        gnome-session-quit --reboot --no-prompt
         # systemctl reboot
         ;;
     shutdown)
-        gnome-session-quit --power-off
+        gnome-session-quit --power-off --no-prompt
         # systemctl poweroff
         ;;
     *)
