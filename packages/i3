@@ -51,6 +51,9 @@ network-manager-applet
 gnome-keyring
 libgnome-keyring
 
+# User permissions
+polkit-gnome
+
 # Sound management
 pavucontrol
 volumeicon

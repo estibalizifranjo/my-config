@@ -199,7 +199,7 @@ for_window [class="QtCreator"] move container to workspace IDE; workspace IDE
 exec --no-startup-id ~/.fehbg
 exec --no-startup-id xautolock -time 10 -locker 'i3exit lock'
 exec --no-startup-id compton
-exec --no-startup-id /usr/lib/gnome-settings-daemon/gnome-settings-daemon
 exec /usr/lib/xfce4/notifyd/xfce4-notifyd
 exec nm-applet
 exec volumeicon
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
