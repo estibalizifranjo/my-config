@@ -20,6 +20,10 @@ set showmatch
 " Wrap text instead of being on one line
 set lbr
 
+" Powerline
+let $PYTHONPATH='/usr/lib/python3.6/site-packages'
+set laststatus=2
+
 " Change colorscheme to solarized
 set background=dark
 colorscheme solarized
