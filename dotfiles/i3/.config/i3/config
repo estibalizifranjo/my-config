@@ -203,3 +203,4 @@ exec /usr/lib/xfce4/notifyd/xfce4-notifyd
 exec nm-applet
 exec volumeicon
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id powerline-daemon
