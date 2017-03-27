@@ -40,3 +40,13 @@ if [[ -n ${terminfo[smkx]} ]] && [[ -n ${terminfo[rmkx]} ]]; then
   zle -N zle-line-init
   zle -N zle-line-finish
 fi
+
+
+### Other keys (press <Ctrl+v> before a key to see its code printed)
+# vte3 based terminal
+bindkey ';5C' emacs-forward-word
+bindkey ';5D' emacs-backward-word
+
+# Linux virtual terminal
+bindkey '^[[C' emacs-forward-word
+bindkey '^[[D' emacs-backward-word
