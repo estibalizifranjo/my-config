@@ -175,12 +175,14 @@ mode "$mode_system" {
 bindsym $mod+Escape mode "$mode_system"
 
 ### Multimedia keys
-bindsym XF86AudioPlay        exec --no-startup-id playerctl play-pause
-bindsym XF86AudioPause       exec --no-startup-id playerctl pause
-bindsym XF86AudioNext        exec --no-startup-id playerctl next
-bindsym XF86AudioPrev        exec --no-startup-id playerctl previous
-bindsym XF86AudioStop        exec --no-startup-id playerctl stop
-bindsym XF86ScreenSaver      exec --no-startup-id i3exit lock
+bindsym XF86AudioPlay          exec --no-startup-id playerctl play-pause
+bindsym XF86AudioPause         exec --no-startup-id playerctl pause
+bindsym XF86AudioNext          exec --no-startup-id playerctl next
+bindsym XF86AudioPrev          exec --no-startup-id playerctl previous
+bindsym XF86AudioStop          exec --no-startup-id playerctl stop
+bindsym XF86ScreenSaver        exec --no-startup-id i3exit lock
+bindsym XF86MonBrightnessDown  exec xbacklight -5%
+bindsym XF86MonBrightnessUp    exec xbacklight +5%
 
 ### Decorations
 # class                  border    backgr.    text    indicator (*)

@@ -12,6 +12,7 @@ xf86-input-libinput
 
 # Screen management utilities
 xorg-xrandr
+xorg-xbacklight
 
 ### Login manager
 lightdm
