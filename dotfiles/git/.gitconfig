@@ -15,3 +15,8 @@
 	st = status
 	unstage = reset HEAD --
 	last = log -1 HEAD
+	format = clang-format
+	view = log --oneline --graph --decorate --all --date-order
+
+[pretty]
+	my = format:%C(auto,yellow)%h%C(auto,magenta)% G? %C(auto,blue)%>(26,trunc)%ai %C(auto,green)%<(16,trunc)%aN%C(auto,reset)%s%C(auto,red)% gD% D
