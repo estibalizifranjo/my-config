@@ -147,13 +147,13 @@ bar {
   position top
   status_command       i3status
   colors {
-    statusline         "#888888"
-    background         "#000000"
+    statusline         "#a8abb0"
+    background         "#212526"
     # class              border   backgr.    text
-    focused_workspace  "#aaaaaa" "#aaaaaa" "#000000"
-    active_workspace   "#777777" "#777777" "#000000"
-    inactive_workspace "#333333" "#333333" "#888888"
-    urgent_workspace   "#ff5555" "#ff5555" "#000000"
+    focused_workspace  "#161a1a" "#7a7e7f" "#fdfdfd"
+    active_workspace   "#33393b" "#33393b" "#eeeeec"
+    inactive_workspace "#161a1a" "#232729" "#bfbfbe"
+    urgent_workspace   "#760909" "#c00f0f" "#fefefe"
   }
 }
 
@@ -185,18 +185,12 @@ bindsym XF86MonBrightnessDown  exec xbacklight -5%
 bindsym XF86MonBrightnessUp    exec xbacklight +5%
 
 ### Decorations
-# class                  border    backgr.    text    indicator (*)
-client.focused	        "#000000" "#777777" "#aaaaaa" "#cc7777"
-client.focused_inactive "#000000" "#000000" "#aaaaaa" "#550000"
-client.unfocused        "#000000" "#000000" "#aaaaaa" "#550000"
-client.urgent           "#ff5555" "#ff5555" "#000000" "#ff0000"
 new_window              pixel 1
 new_float               none
 hide_edge_borders       both
 
 ### Special cases
-for_window [class="Chromium" window_role="browser"] border none; move container to workspace Web; workspace Web
-for_window [class="Chromium" instance="crx_fahmaaghhglfmonjliepjlchgpgfmobi"] floating enable
+for_window [class="Chromium" window_role="browser"] move container to workspace Web; workspace Web
 for_window [class="QtCreator"] move container to workspace IDE; workspace IDE
 
 ### Daemons
