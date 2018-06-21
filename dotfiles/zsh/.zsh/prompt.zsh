@@ -1,5 +1,5 @@
-if [[ $(pgrep -f "powerline-daemon") ]]; then
-  source /usr/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
+if [[ -f /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme ]]; then
+  source /usr/share/zsh-theme-powerlevel9k/powerlevel9k.zsh-theme
 else
   setopt prompt_subst
   () {
