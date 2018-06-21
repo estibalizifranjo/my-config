@@ -52,3 +52,6 @@ pulseaudio
 pavucontrol
 volumeicon
 
+# Theming
+aur/paper-icon-theme
+adapta-gtk-theme
