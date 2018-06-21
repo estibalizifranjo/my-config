@@ -1,10 +1,10 @@
 ### X server
 xorg-server
+compton
 
 # Video drivers (only one needed)
 xf86-video-intel
 xf86-video-amdgpu
-xf86-video-ati
 xf86-video-nouveau
 
 # Input driver
@@ -23,13 +23,7 @@ accountsservice
 i3-wm
 i3status
 
-### Session manager
-aur/gnome-i3
-
 ### Desktop utilities
-# File manager
-nautilus
-
 # Lock screen
 i3lock
 xautolock
@@ -48,17 +42,13 @@ rofi
 networkmanager
 network-manager-applet
 
-# Keyring management
+# Security
 gnome-keyring
 libgnome-keyring
-
-# User permissions
 polkit-gnome
 
 # Sound management
+pulseaudio
 pavucontrol
 volumeicon
-
-# Mediakeys utilities
-aur/playerctl
 

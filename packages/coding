@@ -2,6 +2,7 @@
 # C/C++ Compilers
 gcc
 clang
+ccache
 
 # C/C++ IDE
 qtcreator
