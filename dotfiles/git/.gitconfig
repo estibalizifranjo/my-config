@@ -23,11 +23,11 @@
 	ci = commit
 	st = status
 	unstage = reset HEAD --
-	last = log -1 HEAD
-	format = clang-format
-	view = log --pretty=myoneline --graph  --all --date-order
 	append = !git add -A && git commit --amend --no-edit
+	format = clang-format
+	last = log -1 HEAD
+	view = log --pretty=tabular --graph --all --date-order
 [pretty]
-	myoneline = format:%C(auto,yellow)%h%C(auto,magenta)% G? %C(auto,blue)%>(26,trunc)%ai %C(auto,green)%<(16,trunc)%aN%C(auto,red)%gd%d%C(auto,reset)% s
+	tabular = format:%>|(22,trunc)%C(auto,yellow)%h %C(auto,reset)%<(52,trunc)%s %C(auto,green)%<(15,trunc)%aN %>(13,trunc)%C(auto,blue)%ar%C(auto,red)%gd%d
 [status]
 	submodulesummary = 1
