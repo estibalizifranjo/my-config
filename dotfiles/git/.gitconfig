@@ -26,6 +26,7 @@
 	last = log -1 HEAD
 	format = clang-format
 	view = log --pretty=myoneline --graph  --all --date-order
+	append = !git add -A && git commit --amend --no-edit
 [pretty]
 	myoneline = format:%C(auto,yellow)%h%C(auto,magenta)% G? %C(auto,blue)%>(26,trunc)%ai %C(auto,green)%<(16,trunc)%aN%C(auto,red)%gd%d%C(auto,reset)% s
 [status]
