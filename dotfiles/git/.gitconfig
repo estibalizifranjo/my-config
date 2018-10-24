@@ -20,3 +20,5 @@
 
 [pretty]
 	my = format:%C(auto,yellow)%h%C(auto,magenta)% G? %C(auto,blue)%>(26,trunc)%ai %C(auto,green)%<(16,trunc)%aN%C(auto,reset)%s%C(auto,red)% gD% D
+[status]
+	submodulesummary = 1
