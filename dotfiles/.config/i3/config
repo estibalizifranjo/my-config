@@ -1,0 +1,225 @@
+# Keys
+set $MOD                      Mod4
+set $LEFT                     Left
+set $DOWN                     Down
+set $UP                       Up
+set $RIGHT                    Right
+
+# Commands
+set $TERM                     "termite"
+set $MENU                     "rofi -show combi"
+set $EXIT                     "i3exit logout"
+set $SHUTDOWN                 "i3exit shutdown"
+set $REBOOT                   "i3exit reboot"
+set $SUSPEND                  "i3exit suspend"
+set $HIBERNATE                "i3exit hibernate"
+set $LOCK                     "i3exit lock"
+set $BRIGHTNESS_UP            "light -A 5"
+set $BRIGHTNESS_DOWN          "light -U 5"
+set $AUDIO_RAISE_VOLUME       "pactl set-sink-volume @DEFAULT_SINK@ +5%"
+set $AUDIO_LOWER_VOLUME       "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+set $AUDIO_MUTE               "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+set $AUDIO_PLAY               "playerctl play-pause"
+set $AUDIO_PAUSE              "playerctl pause"
+set $AUDIO_NEXT               "playerctl next"
+set $AUDIO_PREV               "playerctl previous"
+set $AUDIO_STOP               "playerctl stop"
+
+# Workspace names
+set $WS1                      "1"
+set $WS2                      "2"
+set $WS3                      "3"
+set $WS4                      "4"
+set $WS5                      "5"
+set $WS6                      "6"
+set $WS7                      "7"
+set $WS8                      "8"
+set $WS9                      "9"
+set $WS10                     "10"
+
+
+#------------------------------------------------------------------------------
+# Keybindings
+#------------------------------------------------------------------------------
+floating_modifier             $MOD
+
+# Basic
+bindsym $MOD+q                kill
+bindsym $MOD+Return           exec $TERM
+bindsym $MOD+space            exec $MENU
+bindsym $MOD+Shift+r          reload
+bindsym $MOD+Shift+q          exec $EXIT
+
+# Move the focus
+bindsym $MOD+$LEFT            focus left
+bindsym $MOD+$DOWN            focus down
+bindsym $MOD+$UP              focus up
+bindsym $MOD+$RIGHT           focus right
+
+# Move the focused window
+bindsym $MOD+Shift+$LEFT      move left
+bindsym $MOD+Shift+$DOWN      move down
+bindsym $MOD+Shift+$UP        move up
+bindsym $MOD+Shift+$RIGHT     move right
+
+# Move the focused workspace between outputs
+bindsym $MOD+Control+$LEFT    move workspace to output left
+bindsym $MOD+Control+$DOWN    move workspace to output down
+bindsym $MOD+Control+$UP      move workspace to output up
+bindsym $MOD+Control+$RIGHT   move workspace to output right
+
+# Switch to workspace
+bindsym $MOD+1                workspace $WS1
+bindsym $MOD+2                workspace $WS2
+bindsym $MOD+3                workspace $WS3
+bindsym $MOD+4                workspace $WS4
+bindsym $MOD+5                workspace $WS5
+bindsym $MOD+6                workspace $WS6
+bindsym $MOD+7                workspace $WS7
+bindsym $MOD+8                workspace $WS8
+bindsym $MOD+9                workspace $WS9
+bindsym $MOD+0                workspace $WS10
+
+# Move focused container to workspace
+bindsym $MOD+Shift+1          move container to workspace $WS1
+bindsym $MOD+Shift+2          move container to workspace $WS2
+bindsym $MOD+Shift+3          move container to workspace $WS3
+bindsym $MOD+Shift+4          move container to workspace $WS4
+bindsym $MOD+Shift+5          move container to workspace $WS5
+bindsym $MOD+Shift+6          move container to workspace $WS6
+bindsym $MOD+Shift+7          move container to workspace $WS7
+bindsym $MOD+Shift+8          move container to workspace $WS8
+bindsym $MOD+Shift+9          move container to workspace $WS9
+bindsym $MOD+Shift+0          move container to workspace $WS10
+
+### Layout stuff
+bindsym $MOD+h                splith
+bindsym $MOD+v                splitv
+bindsym $MOD+s                layout stacking
+bindsym $MOD+t                layout tabbed
+bindsym $MOD+x                layout toggle split
+bindsym $MOD+f                fullscreen
+bindsym $MOD+Shift+f          floating toggle
+
+# Move focus to the parent container
+bindsym $MOD+d                focus mode_toggle
+bindsym $MOD+a                focus parent
+bindsym $MOD+Shift+a          focus child
+
+# Scratchpad:
+bindsym $MOD+Shift+Tab        move scratchpad
+bindsym $MOD+Tab              scratchpad show
+
+# Multimedia keys
+bindsym XF86MonBrightnessUp   exec $BRIGHTNESS_UP
+bindsym XF86MonBrightnessDown exec $BRIGHTNESS_DOWN
+bindsym XF86AudioRaiseVolume  exec $AUDIO_RAISE_VOLUME
+bindsym XF86AudioLowerVolume  exec $AUDIO_LOWER_VOLUME
+bindsym XF86AudioMute         exec $AUDIO_MUTE
+bindsym XF86AudioPlay         exec $AUDIO_PLAY
+bindsym XF86AudioPause        exec $AUDIO_PAUSE
+bindsym XF86AudioNext         exec $AUDIO_NEXT
+bindsym XF86AudioPrev         exec $AUDIO_PREV
+bindsym XF86AudioStop         exec $AUDIO_STOP
+bindsym XF86ScreenSaver       exec $LOCK
+
+#------------------------------------------------------------------------------
+# Special modes
+#------------------------------------------------------------------------------
+# Resizing
+mode "resize" {
+    bindsym $LEFT             resize shrink width 10px
+    bindsym $DOWN             resize grow height 10px
+    bindsym $UP               resize shrink height 10px
+    bindsym $RIGHT            resize grow width 10px
+
+    # return to default mode
+    bindsym Return            mode "default"
+    bindsym Escape            mode "default"
+}
+bindsym $MOD+r                mode "resize"
+
+# System mode
+set $MODE_SYSTEM              "System (L)ock, L(o)gout, (s)uspend, (h)ibernate, (Shift+r)eboot, (Shift+s)hutdown"
+mode $MODE_SYSTEM {
+    bindsym l                 exec $LOCK;              mode "default"
+    bindsym o                 exec $EXIT;              mode "default"
+    bindsym s                 exec $SUSPEND;           mode "default"
+    bindsym h                 exec $HIBERNATE;         mode "default"
+    bindsym Shift+r           exec $REBOOT;            mode "default"
+    bindsym Shift+s           exec $SHUTDOWN;          mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return            mode "default"
+    bindsym Escape            mode "default"
+}
+bindsym $MOD+Escape           mode $MODE_SYSTEM
+
+#------------------------------------------------------------------------------
+# Style
+#------------------------------------------------------------------------------
+font                          pango:DejaVu Sans Mono 8
+
+# Colors
+# class                       border    backgr.   text      indicator child_border
+client.focused                #4c7899   #285577   #ffffff   #2e9ef4   #285577
+client.focused_inactive       #333333   #5f676a   #ffffff   #484e50   #5f676a
+client.unfocused              #333333   #222222   #888888   #292d2e   #222222
+client.urgent                 #2f343a   #900000   #ffffff   #900000   #900000
+client.placeholder            #000000   #0c0c0c   #ffffff   #000000   #0c0c0c
+client.background             #ffffff
+
+# Borders
+default_border                none
+default_floating_border       none
+hide_edge_borders             smart_no_gaps
+gaps                          inner 5
+smart_gaps                    on
+
+#------------------------------------------------------------------------------
+# Status bar
+#------------------------------------------------------------------------------
+bar {
+    status_command            i3blocks
+    position                  top
+    font                      pango:DejaVu Sans Mono 8
+    separator_symbol          " | "
+
+    colors {
+        background            #212526
+        statusline            #a8abb0
+        #separator             #666666
+        #focused_background    #000000
+        #focused_statusline    #ffffff
+        #focused_separator     #666666
+
+        # class               boder     backgr.   text
+        focused_workspace     #161a1a   #7a7e7f   #fdfdfd
+        active_workspace      #33393b   #33393b   #eeeeec
+        inactive_workspace    #161a1a   #232729   #888888
+        urgent_workspace      #760909   #c00f0f   #bfbfbe
+        binding_mode          #760909   #c00f0f   #bfbfbe
+    }
+}
+bindsym $MOD+b                bar mode toggle
+
+#------------------------------------------------------------------------------
+# Custom workspaces
+#------------------------------------------------------------------------------
+set $WS_IDE                   "IDE"
+bindcode $MOD+49              workspace $WS_IDE
+bindcode $MOD+Shift+49        move container to workspace $WS_IDE
+for_window [class="QtCreator"] move container to workspace $WS_IDE; workspace $WS_IDE
+
+set $WS_WEB                   "Web"
+bindsym $MOD+w                workspace $WS_WEB
+bindsym $MOD+Shift+w          move container to workspace $WS_WEB
+for_window [class="Firefox"]  move container to workspace $WS_WEB; workspace $WS_WEB
+for_window [class="Chromium"] move container to workspace $WS_WEB; workspace $WS_WEB
+
+#------------------------------------------------------------------------------
+# External programs
+#------------------------------------------------------------------------------
+exec --no-startup-id          ~/.config/i3/background.sh
+exec --no-startup-id          ~/.config/i3/idle.sh
+

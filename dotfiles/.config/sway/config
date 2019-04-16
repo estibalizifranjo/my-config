@@ -1,0 +1,20 @@
+# Reuse the i3 configuration
+include ~/.config/i3/config
+
+# Default input configuration
+input * {
+    # Spanish by default
+    xkb_layout es
+
+    # disable-while-typing
+    dwt                       enabled
+    tap                       enabled
+    middle_emulation          enabled
+    natural_scroll            disabled
+}
+
+# Wayland applications rules
+for_window [app_id='gnome-calculator'] floating enable
+
+# Custom host configuration
+include ~/.config/sway/`hostname`
