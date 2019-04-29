@@ -6,24 +6,24 @@ set $UP                       Up
 set $RIGHT                    Right
 
 # Commands
-set $TERM                     "termite"
-set $MENU                     "rofi -show combi"
-set $EXIT                     "i3exit logout"
-set $SHUTDOWN                 "i3exit shutdown"
-set $REBOOT                   "i3exit reboot"
-set $SUSPEND                  "i3exit suspend"
-set $HIBERNATE                "i3exit hibernate"
-set $LOCK                     "i3exit lock"
-set $BRIGHTNESS_UP            "light -A 5"
-set $BRIGHTNESS_DOWN          "light -U 5"
-set $AUDIO_RAISE_VOLUME       "pactl set-sink-volume @DEFAULT_SINK@ +5%"
-set $AUDIO_LOWER_VOLUME       "pactl set-sink-volume @DEFAULT_SINK@ -5%"
-set $AUDIO_MUTE               "pactl set-sink-mute @DEFAULT_SINK@ toggle"
-set $AUDIO_PLAY               "playerctl play-pause"
-set $AUDIO_PAUSE              "playerctl pause"
-set $AUDIO_NEXT               "playerctl next"
-set $AUDIO_PREV               "playerctl previous"
-set $AUDIO_STOP               "playerctl stop"
+set $TERM                     termite
+set $MENU                     rofi -show combi
+set $EXIT                     i3exit logout
+set $SHUTDOWN                 i3exit shutdown
+set $REBOOT                   i3exit reboot
+set $SUSPEND                  i3exit suspend
+set $HIBERNATE                i3exit hibernate
+set $LOCK                     i3exit lock
+set $BRIGHTNESS_UP            light -A 5
+set $BRIGHTNESS_DOWN          light -U 5
+set $AUDIO_RAISE_VOLUME       pactl set-sink-volume @DEFAULT_SINK@ +5%
+set $AUDIO_LOWER_VOLUME       pactl set-sink-volume @DEFAULT_SINK@ -5%
+set $AUDIO_MUTE               pactl set-sink-mute @DEFAULT_SINK@ toggle
+set $AUDIO_PLAY               playerctl play-pause
+set $AUDIO_PAUSE              playerctl pause
+set $AUDIO_NEXT               playerctl next
+set $AUDIO_PREV               playerctl previous
+set $AUDIO_STOP               playerctl stop
 
 # Workspace names
 set $WS1                      "1"
@@ -36,7 +36,6 @@ set $WS7                      "7"
 set $WS8                      "8"
 set $WS9                      "9"
 set $WS10                     "10"
-
 
 #------------------------------------------------------------------------------
 # Keybindings
