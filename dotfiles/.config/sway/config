@@ -14,7 +14,7 @@ input * {
 }
 
 # Wayland applications rules
-for_window [app_id='gnome-calculator'] floating enable
+for_window [app_id="gnome-calculator"] floating enable
 
 # Custom host configuration
 include ~/.config/sway/`hostname`
