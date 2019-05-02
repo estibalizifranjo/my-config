@@ -1,19 +1,18 @@
-[core]
-	editor = vim
 [alias]
-	co = checkout
+	append = !git add -A && git commit --amend --no-edit
 	br = branch
 	ci = commit
-	st = status
-	unstage = reset HEAD --
-	append = !git add -A && git commit --amend --no-edit
+	co = checkout
 	format = clang-format
 	last = log -1 HEAD
+	rprune = "!f() { git fetch -p && git branch --list --format \"%(if:equals=[gone])%(upstream:track)%(then)%(refname:short)%(end)\" | xargs --no-run-if-empty git branch -d; }; f"
+	st = status
+	unstage = reset HEAD --
 	view = log --pretty=tabular --graph --all --date-order
-[pretty]
-	tabular = format:%>|(22,trunc)%C(auto,yellow)%h %C(auto,reset)%<(52,trunc)%s %C(auto,green)%<(15,trunc)%aN %>(13,trunc)%C(auto,blue)%ar%C(auto,red)%gd%d
-[push]
-	default = simple
+[core]
+	editor = vim
+[credential]
+	helper = /usr/lib/git-core/git-credential-libsecret
 [diff]
 	tool = meld
 [difftool]
@@ -21,13 +20,15 @@
 [difftool "meld"]
 	cmd = meld "$LOCAL" "$REMOTE"
 [merge]
-	tool = meld
 	conflictstyle = diff3
+	tool = meld
 [mergetool]
 	prompt = false
 [mergetool "meld"]
 	cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
+[pretty]
+	tabular = format:%>|(22,trunc)%C(auto,yellow)%h %C(auto,reset)%<(52,trunc)%s %C(auto,green)%<(15,trunc)%aN %>(13,trunc)%C(auto,blue)%ar%C(auto,red)%gd%d
+[push]
+	default = simple
 [status]
 	submodulesummary = 1
-[credential]
-	helper = /usr/lib/git-core/git-credential-gnome-keyring
