@@ -47,7 +47,7 @@ bindsym $MOD+q                kill
 bindsym $MOD+Return           exec $TERM
 bindsym $MOD+space            exec $MENU
 bindsym $MOD+Shift+r          reload
-bindsym $MOD+Shift+q          exec $EXIT
+bindsym $MOD+Shift+q          exec --no-starup-id $EXIT
 
 # Move the focus
 bindsym $MOD+$LEFT            focus left
@@ -110,17 +110,17 @@ bindsym $MOD+Shift+Tab        move scratchpad
 bindsym $MOD+Tab              scratchpad show
 
 # Multimedia keys
-bindsym XF86MonBrightnessUp   exec $BRIGHTNESS_UP
-bindsym XF86MonBrightnessDown exec $BRIGHTNESS_DOWN
-bindsym XF86AudioRaiseVolume  exec $AUDIO_RAISE_VOLUME
-bindsym XF86AudioLowerVolume  exec $AUDIO_LOWER_VOLUME
-bindsym XF86AudioMute         exec $AUDIO_MUTE
-bindsym XF86AudioPlay         exec $AUDIO_PLAY
-bindsym XF86AudioPause        exec $AUDIO_PAUSE
-bindsym XF86AudioNext         exec $AUDIO_NEXT
-bindsym XF86AudioPrev         exec $AUDIO_PREV
-bindsym XF86AudioStop         exec $AUDIO_STOP
-bindsym XF86ScreenSaver       exec $LOCK
+bindsym XF86MonBrightnessUp   exec --no-startup-id $BRIGHTNESS_UP
+bindsym XF86MonBrightnessDown exec --no-startup-id $BRIGHTNESS_DOWN
+bindsym XF86AudioRaiseVolume  exec --no-startup-id $AUDIO_RAISE_VOLUME
+bindsym XF86AudioLowerVolume  exec --no-startup-id $AUDIO_LOWER_VOLUME
+bindsym XF86AudioMute         exec --no-startup-id $AUDIO_MUTE
+bindsym XF86AudioPlay         exec --no-startup-id $AUDIO_PLAY
+bindsym XF86AudioPause        exec --no-startup-id $AUDIO_PAUSE
+bindsym XF86AudioNext         exec --no-startup-id $AUDIO_NEXT
+bindsym XF86AudioPrev         exec --no-startup-id $AUDIO_PREV
+bindsym XF86AudioStop         exec --no-startup-id $AUDIO_STOP
+bindsym XF86ScreenSaver       exec --no-startup-id $LOCK
 
 #------------------------------------------------------------------------------
 # Special modes
@@ -141,12 +141,12 @@ bindsym $MOD+r                mode "resize"
 # System mode
 set $MODE_SYSTEM              "System (L)ock, L(o)gout, (s)uspend, (h)ibernate, (Shift+r)eboot, (Shift+s)hutdown"
 mode $MODE_SYSTEM {
-    bindsym l                 exec $LOCK;              mode "default"
-    bindsym o                 exec $EXIT;              mode "default"
-    bindsym s                 exec $SUSPEND;           mode "default"
-    bindsym h                 exec $HIBERNATE;         mode "default"
-    bindsym Shift+r           exec $REBOOT;            mode "default"
-    bindsym Shift+s           exec $SHUTDOWN;          mode "default"
+    bindsym l                 exec --no-startup-id $LOCK;         mode "default"
+    bindsym o                 exec --no-startup-id $EXIT;         mode "default"
+    bindsym s                 exec --no-startup-id $SUSPEND;      mode "default"
+    bindsym h                 exec --no-startup-id $HIBERNATE;    mode "default"
+    bindsym Shift+r           exec --no-startup-id $REBOOT;       mode "default"
+    bindsym Shift+s           exec --no-startup-id $SHUTDOWN;     mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return            mode "default"
