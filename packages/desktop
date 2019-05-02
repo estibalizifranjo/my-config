@@ -1,0 +1,22 @@
+### Window manager
+sway
+swayidle
+swaylock
+i3blocks
+xorg-server-xwayland
+
+# Launcher
+rofi
+
+# Terminal emulator
+termite
+
+# Security
+gnome-keyring
+libgnome-keyring
+polkit-gnome
+
+# Sound management
+pulseaudio
+pavucontrol
+

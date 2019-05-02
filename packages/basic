@@ -1,0 +1,32 @@
+# Shell
+zsh
+
+# System backups
+btrfs-progs
+snapper
+snap-pac
+
+# Version control
+git
+
+# Terminal editor
+vim
+
+# Network management
+networkmanager
+
+# Session manager
+tmux
+
+# Proces manager
+htop
+
+# Open files viewer
+lsof
+
+# Remote access utilities
+openssh
+openbsd-netcat
+
+# File synchronization
+rsync

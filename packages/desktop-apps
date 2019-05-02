@@ -1,0 +1,41 @@
+### Desktop programs
+# Web browsers
+chromium
+firefox
+
+# Multimedia
+mplayer
+gimp
+inkscape
+eog
+
+# Compression
+file-roller
+unrar
+unace
+lrzip
+
+# Android
+android-tools
+
+# Smart-cards
+pcsclite
+pcsc-tools
+ccid
+opensc
+
+# Partitioning
+gparted
+f2fs-tools
+exfat-utils
+ntfs-3g
+mtools
+gpart
+
+# General desktop apps
+nautilus
+evince
+gnome-terminal
+gnome-calculator
+gedit
+gedit-plugins
