@@ -217,6 +217,11 @@ for_window [class="Firefox"]  move container to workspace $WS_WEB; workspace $WS
 for_window [class="Chromium"] move container to workspace $WS_WEB; workspace $WS_WEB
 
 #------------------------------------------------------------------------------
+# Custom window rules
+#------------------------------------------------------------------------------
+for_window [class="Gnome-calculator"] floating enable
+
+#------------------------------------------------------------------------------
 # External programs
 #------------------------------------------------------------------------------
 exec --no-startup-id          ~/.config/i3/background.sh
