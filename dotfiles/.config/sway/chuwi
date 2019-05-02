@@ -1,0 +1,13 @@
+input "7247:99:LIZHICHIP_USB_Keyboard" {
+    xkb_layout us,es
+    xkb_options grp:alt_shift_toggle
+}
+
+input "0:0:silead_ts" {
+    map_to_output DSI-1
+}
+
+output DSI-1 {
+    transform 90
+    scale 1
+}
