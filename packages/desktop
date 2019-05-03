@@ -4,6 +4,8 @@ swayidle
 swaylock
 i3blocks
 xorg-server-xwayland
+grim
+imagemagick
 
 # Launcher
 rofi
