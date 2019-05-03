@@ -1,6 +1,8 @@
-#!/bin/bash
+#!/bin/sh
 
 set -e
+
+color=000000
 
 if [ "${SWAYSOCK}" ]; then
     capture="grim"
@@ -13,16 +15,20 @@ else
 fi
 
 lock() {
-    umask 0177
-    IMAGE_FILE=$(mktemp --tmpdir .${USER}-screenlock.XXXX.png)
-    trap 'rm -f -- "${IMAGE_FILE}"' INT TERM HUP EXIT
+    if command -v $capture > /dev/null && command -v convert > /dev/null; then
+        umask 0177
+        IMAGE_FILE=$(mktemp --tmpdir .${USER}-screenlock.XXXX.png)
+        trap 'rm -f -- "${IMAGE_FILE}"' INT TERM HUP EXIT
 
-    # Delay added to remove locking artifacts
-    sleep 0.05
+        # Delay added to remove locking artifacts
+        sleep 0.05
 
-    $capture ${IMAGE_FILE}
-    convert -scale 5% -scale 2000% ${IMAGE_FILE} ${IMAGE_FILE}
-    $lock -c 000000 -i ${IMAGE_FILE}
+        $capture ${IMAGE_FILE}
+        convert -scale 5% -scale 2000% ${IMAGE_FILE} ${IMAGE_FILE}
+        $lock -c $color -i ${IMAGE_FILE}
+    else
+        $lock -c $color
+    fi
 }
 
 case "$1" in
