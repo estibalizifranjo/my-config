@@ -1,9 +1,11 @@
 #!/bin/sh
 
-if [ "${WALLPAPER}" ]; then
+WALLPAPER="${HOME}/Pictures/Wallpapers/$(hostname).png"
+
+if [ -f "${WALLPAPER}" ]; then
     if [ "${SWAYSOCK}" ]; then
         swaymsg -t command output '*' bg "${WALLPAPER}" fill
     else
-        feh --no-fehbg --bg-fill "${WALLPAPER}"
+        feh --bg-fill --no-fehbg --no-xinerama "${WALLPAPER}"
     fi
 fi
