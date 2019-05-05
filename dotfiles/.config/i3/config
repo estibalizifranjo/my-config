@@ -224,6 +224,6 @@ for_window [class="Gnome-calculator"] floating enable
 #------------------------------------------------------------------------------
 # External programs
 #------------------------------------------------------------------------------
-exec --no-startup-id          ~/.config/i3/background.sh
+exec_always --no-startup-id   ~/.config/i3/background.sh
 exec --no-startup-id          ~/.config/i3/idle.sh
 exec --no-startup-id          gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh
